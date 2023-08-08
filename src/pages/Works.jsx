@@ -5,7 +5,6 @@ import { AppContext } from '../App';
 
 export const Works = () => {
   const { works } = useContext(AppContext);
-  console.log(works.map(work => work.path));
 
   return(
     <>
@@ -17,7 +16,7 @@ export const Works = () => {
       </p>
       <nav>
         {works.map(work => 
-          <Link key={work.id} to={work.path}>{work.path}</Link>
+          <Link key={work.id} to={work.path}>{work.slug}</Link>
         )
         }
       </nav>

@@ -7,7 +7,12 @@ export const Navbar = () => {
 
   return(
     <div>
-      <button className='btn' onClick={()=> {setDayMode(!dayMode)}}>{dayMode ? 'Passez en mode sombre' : 'Passez en mode clair'}</button>
+      <button className='btn' onClick={()=> {
+        setDayMode(!dayMode)
+        localStorage.setItem('dayMode', dayMode)
+      }}>
+        {dayMode ? 'Passez en mode sombre' : 'Passez en mode clair'}
+      </button>
       <NavLink to='/'>Home</NavLink>
       <NavLink to='/about'>About</NavLink>
       <NavLink to='/works'>Works</NavLink>

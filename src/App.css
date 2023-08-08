@@ -5,6 +5,9 @@
 body {
   background-color: grey;
   color:black;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 body.dark {
@@ -13,5 +16,9 @@ body.dark {
 }
 
 .btn {
-  background-color: green;
+  background-color: grey;
+}
+
+body.dark .btn {
+  background-color: black;
 }
