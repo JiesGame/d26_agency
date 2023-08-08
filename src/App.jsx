@@ -34,7 +34,8 @@ const works = [
 export const AppContext = createContext()
 
 function App() {
-  const [dayMode, setDayMode] = useState(localStorage.getItem('dayMode') || true);
+  const storedDayMode = localStorage.getItem('dayMode');
+  const [dayMode, setDayMode] = useState(storedDayMode === 'true' || false);
   
   useEffect(() => {
     if (dayMode) {
@@ -42,6 +43,8 @@ function App() {
     } else {
       document.body.classList.add('dark');
     }
+    
+    localStorage.setItem('dayMode', dayMode);
   }, [dayMode]); 
 
   return (
